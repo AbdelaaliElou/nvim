@@ -35,11 +35,13 @@ return {
 			"typescript",
 			"vue",
 			"yaml",
+      "c_sharp",
+      "razor"
 		}
 
 		local config = require("nvim-treesitter.config")
 		local already_installed = config.get_installed()
-		local parsers_to_install = {}
+		local parsers_to_install = { "c_sharp", "razor" }
 
 		for _, parser in ipairs(ensure_installed) do
 			if not vim.tbl_contains(already_installed, parser) then
